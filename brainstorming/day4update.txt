@@ -1,0 +1,7 @@
+Day 4 Update
+1. So far we have accquired the base and turn table. Today we should also start 3D printing part to hold coffe nozzle. 
+2. We have whole group disscussion about the direction of the group. During these disscussions everybody's voice is heard and their ideas are considered. After this
+disscussion we break off individually to do work on our tasks. 
+3. Ourbase and turn table are unique. We are also 3D printing parts. These parts will be used to hold the coffee nozzle, a senor that floats in the coffe as well as ball 
+and Drum system to dispence sugar. 
+4. So far we haven't made any big changes to the overall plan. We've only changed smaller design ideas. 
