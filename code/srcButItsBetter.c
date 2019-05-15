@@ -9,6 +9,6 @@ task main()
 {
 	while(true)
 	{
-		moveTable();
+		moveTable(1);
 	}
 }
