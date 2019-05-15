@@ -1,24 +1,24 @@
-void moveTable(int places)
+void moveTable(int places)	//Create moveTable routine and init integer places
 {
-	int retraction = 24; //The slop retraction const
+	int retraction = 24;	//The slop retraction constant
 
-	while(places > 0)
+	while(places > 0)	//For as long as there are places left to move
 	{
-		while(SensorValue[TurntableEndOfTravel] != 1) //As long as the switch is not pressed
+		while(SensorValue[TurntableEndOfTravel] != 1)	//As long as the switch is not pressed...
 		{
-			motor[turnTable] = (60); //advance untill it is
-			delay(1);
+			motor[turnTable] = (60);	//..advance until the switch becomes pressed
+			delay(1);	//Scan every 1ms
 		}
 
-		while(SensorValue[TurntableEndOfTravel] == 1) //Once pressed
+		while(SensorValue[TurntableEndOfTravel] == 1)	//Once pressed...
 		{
-			motor[turnTable] = (34); //turn the motor slower
-			delay(1); //scan every 1ms
+			motor[turnTable] = (34);	//...Slow the motor down
+			delay(1); //Scan every 1ms
 		}
-		motor[turnTable] = (-100); //jerk in reverse for the delay of the slop retraction once the limit switch toggles out
-		delay(retraction);
-		motor[turnTable] = (0);
+		motor[turnTable] = (-100);	//Jerk in reverse for the delay of the slop retraction once the limit switch toggles out of the loop
+		delay(retraction);	//Jerk
+		motor[turnTable] = (0);	//Stop the motor
 
-		places--; //you have moved one place
+		places--;	//Subtract one from the places left to move
 	}
 }
