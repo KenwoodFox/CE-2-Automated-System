@@ -9,9 +9,9 @@ task main()
 {
 	while(true)
 	{
-		moveTable(1);
-		delay(2000);
-		moveTable(2);
-		delay(2000);
+		moveTable(1); //Move one space
+		delay(2000); //wait
+		moveTable(2); //Move two spaces
+		delay(2000); //wait
 	}
 }
