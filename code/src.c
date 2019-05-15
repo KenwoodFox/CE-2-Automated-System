@@ -6,6 +6,7 @@
 
 #include "headers/moveTable.h"
 #include "headers/ce2libraries/init.h"
+#include "headers/ce2libraries/blink.h"
 
 task main()
 {
@@ -13,8 +14,10 @@ task main()
 	{
 		startup(enableBot,LED);
 		moveTable(1); //Move one space
+		blink(3,LED);
 		delay(2000); //wait
 		moveTable(2); //Move two spaces
+		blink(3,LED);
 		delay(2000); //wait
 	}
 }
