@@ -9,16 +9,16 @@
 
 #include "headers/moveTable.h"	//Include the moveTable header
 //#include "headers/ce2libraries/init.h"	//Include the startup header
-//#include "headers/ce2libraries/blink.h"	//Include the blink header
+#include "headers/ce2libraries/blink.h"	//Include the blink header
 
 //Consts
 int requestedSugar = 2; //the number of sugar tumbles to add
 
 //Jobs
-bool cupJobDone = true;
-bool sugarJobDone = true;
-bool creamerJobDone = true;
-bool coffeeJobDone = true;
+bool cupJobDone = true;	//Init job as done
+bool sugarJobDone = true;	//Init job as done
+bool creamerJobDone = true;	//Init job as done
+bool coffeeJobDone = true;	//Init job as done
 #include "jobs.c" //Include all of the jobs
 
 task main()
@@ -29,11 +29,11 @@ task main()
 		//Get inital values for production
 
 		moveTable(1);	//Move one space
-		startAllTasks();
+		startAllTasks();	//Start all of the tasks
 
-		while ((cupJobDone == false) || (sugarJobDone == false) || (creamerJobDone == false) || (coffeeJobDone == false))
+		while ((cupJobDone == false) || (sugarJobDone == false) || (creamerJobDone == false) || (coffeeJobDone == false))	//Wait for every task to tell us that it is complete
 		{
-			delay(10);
+			blink(LED, 3);	//Tripple blink the LED
 		}
 	}
 }
