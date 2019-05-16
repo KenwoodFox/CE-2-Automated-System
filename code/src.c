@@ -19,7 +19,11 @@ bool cupJobDone = true;	//Init job as done
 bool sugarJobDone = true;	//Init job as done
 bool creamerJobDone = true;	//Init job as done
 bool coffeeJobDone = true;	//Init job as done
-#include "jobs.c" //Include all of the jobs
+#include "coffeeDeployJob.h";	//include the coffee job
+#include "creamerDeployJob.h";	//include the creamer job
+#include "cupDeployJob.h";	//include the cup job
+#include "sugarDeployJob.h";	//include the sugar job
+#include "headers/jobs.h" //Include job command structures
 
 task main()
 {
