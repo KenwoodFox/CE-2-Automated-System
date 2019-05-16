@@ -11,14 +11,15 @@
 //#include "headers/ce2libraries/init.h"	//Include the startup header
 //#include "headers/ce2libraries/blink.h"	//Include the blink header
 
+//Consts
+int requestedSugar = 2; //the number of sugar tumbles to add
+
 //Jobs
 bool cupJobDone = true;
 bool sugarJobDone = true;
 bool creamerJobDone = true;
 bool coffeeJobDone = true;
 #include "jobs.c" //Include all of the jobs
-
-int requestedSugar = 2; //the number of sugar tumbles to add
 
 task main()
 {

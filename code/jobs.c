@@ -12,9 +12,9 @@ task sugarDeployJob()
 	sugarJobDone = false;	//Set the status of the job to false, the job is not done yet
 	while(requestedSugar > 0) //For as long as there is sugar requested
 	{
-		servo(sugarServo) = 0;	//Set servo to 0
+		setServo(sugarServo, 0);	//Set servo to 0
 		delay(100);	//delay
-		servo(sugarServo) = 180;	//Set servo to 180
+		setServo(sugarServo, 127);	//Set servo to 180
 		delay(100);	//delay
 		requestedSugar--;
 	}
