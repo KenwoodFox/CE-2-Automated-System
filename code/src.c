@@ -13,6 +13,7 @@
 
 //Consts
 int requestedSugar = 2; //the number of sugar tumbles to add
+int requestedCream = 1; //the units of creamer to add
 
 //Jobs
 bool cupJobDone = true;	//Init job as done
