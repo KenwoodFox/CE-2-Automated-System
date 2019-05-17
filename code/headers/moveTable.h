@@ -4,6 +4,13 @@ void moveTable(int places)	//Create moveTable routine and init integer places
 
 	while(places > 0)	//For as long as there are places left to move
 	{
+		while((SensorValue[sonicCoffeeSensor] > -1) && (SensorValue[sonicCoffeeSensor] < 6)) //if a sensor reports that a cup is present
+		{
+			//hangup
+			delay(500);
+		}
+		delay(800);
+
 		while(SensorValue[TurntableEndOfTravel] != 1)	//As long as the switch is not pressed...
 		{
 			motor[turnTable] = (60);	//..advance until the switch becomes pressed
@@ -21,11 +28,4 @@ void moveTable(int places)	//Create moveTable routine and init integer places
 
 		places--;	//Subtract one from the places left to move
 	}
-
-	if(SensorValue(sonicCoffeeSensor) < 5) //if a sensor reports that a cup is present
-	{
-		//hangup
-		delay(100);
-	}
-	delay(800);
 }

@@ -11,7 +11,7 @@ task coffeeDeployJob()
 	if(((cycleSinceStart - 3) > 0) && ((cycleSinceStart - 3) < stopProduction))	//With an offset of -3, as long as a cup is poised AND production is not to be stopped
 	{
 		SensorValue(coffeeOut)=true;	//Set the coffee to deploy
-		delay(3000);	//delay for a fixed amount of time
+		delay(coffeeConst);	//delay for a fixed amount of time
 		SensorValue(coffeeOut)=false; //turn off the coffee
 	}
 	coffeeJobDone = true;	//Set the flag to true, the job is done

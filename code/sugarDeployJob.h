@@ -12,9 +12,9 @@ task sugarDeployJob()
 	{
 		while(requestedSugar > 0) //For as long as there is sugar requested
 		{
-			motor(sugarServo) = 110;	//Set servo to 0
+			motor(sugarServo) = 127;	//Set servo to 0
 			delay(sugarTurnConst);	//delay
-			motor(sugarServo) = 0;	//Set servo to 180
+			motor(sugarServo) = -0;	//Set servo to 180
 			delay(sugarTurnConst);	//delay
 			requestedSugar--;
 		}
