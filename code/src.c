@@ -1,6 +1,7 @@
 #pragma config(Sensor, dgtl2,  TurntableEndOfTravel, sensorTouch)
 #pragma config(Sensor, dgtl3,  LED,            sensorLEDtoVCC)
 #pragma config(Sensor, dgtl4,  startButton,    sensorTouch)
+#pragma config(Sensor, dgtl5,  sonicCoffeeSensor, sensorSONAR_inch)
 #pragma config(Sensor, dgtl11, creamerOut,     sensorLEDtoVCC)
 #pragma config(Sensor, dgtl12, coffeeOut,      sensorLEDtoVCC)
 #pragma config(Motor,  port1,           turnTable,     tmotorVex393_HBridge, openLoop)
@@ -34,10 +35,11 @@ task main()
 {
 	while(true)
 	{
-		cycleSinceStart = 0;
+		cycleSinceStart = 0; //Set the current cycle to 0
 
 		//startup(enableBot,LED);	//Wait till the startup button enableBot Is pressed
-		//These are temporary,
+
+		//These values will be populated by reading sensors
 		requestedSugar = 2; //the number of sugar tumbles to add
 		requestedCream = 1; //the units of creamer to add
 
