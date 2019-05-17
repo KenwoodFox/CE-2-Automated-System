@@ -21,4 +21,11 @@ void moveTable(int places)	//Create moveTable routine and init integer places
 
 		places--;	//Subtract one from the places left to move
 	}
+
+	if(SensorValue(sonicCoffeeSensor) < 5) //if a sensor reports that a cup is present
+	{
+		//hangup
+		delay(100);
+	}
+	delay(800);
 }

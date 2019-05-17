@@ -8,13 +8,16 @@
 task creamerDeployJob()
 {
 	creamerJobDone = false;	//Set the status of the job to false, the job is not done yet
-	while(requestedCream > 0) //If there is creamer left to request
+	if(((cycleSinceStart - 1) > 0) && ((cycleSinceStart - 1) < stopProduction))	//With an offset of -one, as long as a cup is poised AND production is not to be stopped
 	{
-		SensorValue(creamerOut)=true;	//Set the creamer to deploy
-		delay(creamerConst);	//delay for a fixed amount of time
-		SensorValue(creamerOut)=false;	//turn off the creamer
-		delay(200); //A calm down delay
-		requestedCream--;
+		while(requestedCream > 0) //If there is creamer left to request
+		{
+			SensorValue(creamerOut)=true;	//Set the creamer to deploy
+			delay(creamerConst);	//delay for a fixed amount of time
+			SensorValue(creamerOut)=false;	//turn off the creamer
+			delay(200); //A calm down delay
+			requestedCream--;
+		}
 	}
 	creamerJobDone = true;	//Set the flag to true, the job is done
 	stopTask(creamerDeployJob);	//kermit stop
