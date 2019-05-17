@@ -15,7 +15,9 @@
 int requestedSugar; //the number of sugar tumbles to add
 int requestedCream; //the units of creamer to add
 int creamerConst = 900; //the number of time units to deploy cream for
-int sugarTurnConst = 900;
+int sugarTurnConst = 900; //The time in ms for the sugar motor to run
+int cycleSinceStart = 0; //Counts the current cycle since start
+int stopProduction = 5;	//The max number of full production mode untits
 
 //Jobs
 bool cupJobDone = true;	//Init job as done
@@ -32,16 +34,23 @@ task main()
 {
 	while(true)
 	{
+		cycleSinceStart = 0;
+
 		//startup(enableBot,LED);	//Wait till the startup button enableBot Is pressed
+		//These are temporary,
 		requestedSugar = 2; //the number of sugar tumbles to add
 		requestedCream = 1; //the units of creamer to add
 
-		moveTable(1);	//Move one space
-		startAllTasks();	//Start all of the tasks
-
-		while ((cupJobDone == false) || (sugarJobDone == false) || (creamerJobDone == false) || (coffeeJobDone == false))	//Wait for every task to tell us that it is complete
+		while(cycleSinceStart <= stopProduction)
 		{
-			blink(LED, 3);	//Tripple blink the LED
+			moveTable(1);	//Move one space
+			startAllTasks();	//Start all of the tasks
+
+			while ((cupJobDone == false) || (sugarJobDone == false) || (creamerJobDone == false) || (coffeeJobDone == false))	//Wait for every task to tell us that it is complete
+			{
+				blink(LED, 3);	//Tripple blink the LED
+			}
+			cycleSinceStart++; //Count this as a completed cycle
 		}
 	}
 }
