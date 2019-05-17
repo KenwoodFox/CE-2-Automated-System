@@ -1,2 +1,6 @@
 
 *.tmp
+CAD/lockfile.lck
+CAD/Subsystems/Coffee Filler/lockfile.lck
+CAD/Subsystems/Cup Depositor/lockfile.lck
+CAD/Subsystems/Sugar Dispensal System/lockfile.lck
