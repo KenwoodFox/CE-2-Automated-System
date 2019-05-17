@@ -8,13 +8,16 @@
 task sugarDeployJob()
 {
 	sugarJobDone = false;	//Set the status of the job to false, the job is not done yet
-	while(requestedSugar > 0) //For as long as there is sugar requested
+	if(((cycleSinceStart - 2) > 0) && ((cycleSinceStart - 2) < stopProduction))	//With an offset of -2, as long as a cup is poised AND production is not to be stopped
 	{
-		motor(sugarServo) = 37;	//Set servo to 0
-		delay(sugarTurnConst);	//delay
-		motor(sugarServo) = 0;	//Set servo to 180
-		delay(sugarTurnConst);	//delay
-		requestedSugar--;
+		while(requestedSugar > 0) //For as long as there is sugar requested
+		{
+			motor(sugarServo) = 37;	//Set servo to 0
+			delay(sugarTurnConst);	//delay
+			motor(sugarServo) = 0;	//Set servo to 180
+			delay(sugarTurnConst);	//delay
+			requestedSugar--;
+		}
 	}
 	sugarJobDone = true;	//Set the flag to true, the job is done
 	stopTask(sugarDeployJob);	//kermit stop

@@ -8,7 +8,10 @@
 task cupDeployJob()
 {
 	cupJobDone = false;	//Set the status of the job to false, the job is not done yet
-	delay(700);	//This delay to simulate the job being done
+	if(cycleSinceStart < stopProduction)	//As long as this is not a cycle that takes place after production stops
+	{
+		delay(700);	//This delay to simulate the job being done
+	}
 
 	cupJobDone = true;	//Set the flag to true, the job is done
 	stopTask(cupDeployJob);	//kermit stop
