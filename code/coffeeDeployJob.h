@@ -14,6 +14,7 @@ task coffeeDeployJob()
 		delay(coffeeConst);	//delay for a fixed amount of time
 		SensorValue(coffeeOut)=false; //turn off the coffee
 	}
+	delay(1000); //Give an extra second
 	coffeeJobDone = true;	//Set the flag to true, the job is done
 	stopTask(coffeeDeployJob);	//kermit stop
 }

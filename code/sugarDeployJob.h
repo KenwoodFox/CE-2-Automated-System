@@ -19,6 +19,7 @@ task sugarDeployJob()
 			requestedSugar--;
 		}
 	}
+	delay(1000); //Give an extra second
 	sugarJobDone = true;	//Set the flag to true, the job is done
 	stopTask(sugarDeployJob);	//kermit stop
 }

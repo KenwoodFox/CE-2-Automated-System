@@ -12,7 +12,7 @@ task cupDeployJob()
 	{
 		delay(700);	//This delay to simulate the job being done
 	}
-
+	delay(1000); //Give an extra second
 	cupJobDone = true;	//Set the flag to true, the job is done
 	stopTask(cupDeployJob);	//kermit stop
 }

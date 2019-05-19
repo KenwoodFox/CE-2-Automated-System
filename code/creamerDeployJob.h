@@ -19,6 +19,7 @@ task creamerDeployJob()
 			requestedCream--;
 		}
 	}
+	delay(1000); //Give an extra second
 	creamerJobDone = true;	//Set the flag to true, the job is done
 	stopTask(creamerDeployJob);	//kermit stop
 }
