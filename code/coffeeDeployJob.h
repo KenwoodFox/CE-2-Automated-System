@@ -8,6 +8,7 @@
 task coffeeDeployJob()
 {
 	coffeeJobDone = false;	//Set the status of the job to false, the job is not done yet
+
 	if(((cycleSinceStart - 3) > 0) && ((cycleSinceStart - 3) < stopProduction))	//With an offset of -3, as long as a cup is poised AND production is not to be stopped
 	{
 		SensorValue(coffeeOut)=true;	//Set the coffee to deploy

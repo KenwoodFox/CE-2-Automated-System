@@ -8,6 +8,7 @@
 task creamerDeployJob()
 {
 	creamerJobDone = false;	//Set the status of the job to false, the job is not done yet
+
 	if(((cycleSinceStart - 1) > 0) && ((cycleSinceStart - 1) < stopProduction))	//With an offset of -one, as long as a cup is poised AND production is not to be stopped
 	{
 		while(requestedCream > 0) //If there is creamer left to request

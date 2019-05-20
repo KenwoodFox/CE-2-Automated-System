@@ -8,6 +8,7 @@
 task cupDeployJob()
 {
 	cupJobDone = false;	//Set the status of the job to false, the job is not done yet
+
 	if(cycleSinceStart < stopProduction)	//As long as this is not a cycle that takes place after production stops
 	{
 		delay(700);	//This delay to simulate the job being done

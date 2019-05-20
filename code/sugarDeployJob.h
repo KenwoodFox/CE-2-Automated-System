@@ -8,14 +8,22 @@
 task sugarDeployJob()
 {
 	sugarJobDone = false;	//Set the status of the job to false, the job is not done yet
+
 	if(((cycleSinceStart - 2) > 0) && ((cycleSinceStart - 2) < stopProduction))	//With an offset of -2, as long as a cup is poised AND production is not to be stopped
 	{
 		while(requestedSugar > 0) //For as long as there is sugar requested
 		{
-			motor(sugarServo) = 127;	//Set servo to 0
-			delay(sugarTurnConst);	//delay
-			motor(sugarServo) = -0;	//Set servo to 180
-			delay(sugarTurnConst);	//delay
+			if(requestedSugar %2)
+			{
+				motor(sugarServo) = 127;	//Set motor
+			}
+			else
+			{
+				motor(sugarServo) = -127;	//Set motor
+			}
+			delay(sugarTurnConst);		//delay
+			motor(sugarServo) = 0;		//Set motor
+			delay(sugarTurnConst);		//delay
 			requestedSugar--;
 		}
 	}
