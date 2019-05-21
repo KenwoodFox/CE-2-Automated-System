@@ -1,0 +1,6 @@
+In my part of the group project. Adamson and I were mainly tasked to develope a 3D printed despencer. While we were making it, we had a lot of problems where 
+we did'nt know how to make a arc to make the curve. That was solved by Joe's help by using the sweep option on inventor. Then we had to problem solve the rest. 
+Our next problem was that we had to figure out how to move the circle and change the dimention of the circle without getting an error. The way we did this was we 
+use the "point" to get a exact point where to position the circle. Our last problem was that we had to creat a stand for the despencer. 
+At first we had to thicken the entire thing since it was to small at first but we use the "thicken" tool. Then when it came to when we had to expand the bottom.
+we had to use thew "plane" tool Joe showed us at the beginning. Then we finally finished and printed it.
