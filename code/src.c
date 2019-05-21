@@ -16,7 +16,7 @@
 int requestedSugar; 			//the number of sugar tumbles to add
 int requestedCream; 			//the units of creamer to add
 int creamerConst = 900; 	//the number of time units to deploy cream for
-int sugarTurnConst = 900; //The time in ms for the sugar motor to run
+int sugarTurnConst = 975; //The time in ms for the sugar motor to run
 int coffeeConst = 3500;		//The time in ms for the coffee to be deployed safely
 int cycleSinceStart; 			//Counts the current cycle since start
 int stopProduction = 5;		//The max number of full production mode untits
@@ -39,10 +39,10 @@ task main()
 		cycleSinceStart = 1; //Set the current cycle to 0
 
 		startup(startButton,LED);	//Wait till the startup button enableBot Is pressed
+		moveTable(1);	//Move one space
 
-		while(cycleSinceStart <= stopProduction)
+		while(cycleSinceStart <= stopProduction + 4)
 		{
-			moveTable(1);	//Move one space
 			//These values will be populated by reading sensors
 			requestedSugar = 2; //the number of sugar tumbles to add
 			requestedCream = 1; //the units of creamer to add
@@ -53,6 +53,7 @@ task main()
 			{
 				blink(LED, 3);	//Tripple blink the LED
 			}
+			moveTable(1);	//Move one space
 			cycleSinceStart++; //Count this as a completed cycle
 		}
 		moveTable(stopProduction + 1);	//Move the number of spaces of cups left
