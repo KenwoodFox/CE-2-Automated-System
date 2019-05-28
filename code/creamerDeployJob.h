@@ -9,8 +9,14 @@ task creamerDeployJob()
 {
 	creamerJobDone = false;	//Set the status of the job to false, the job is not done yet
 
-	if(((cycleSinceStart - 1) > 0) && ((cycleSinceStart - 1) < stopProduction))	//With an offset of -one, as long as a cup is poised AND production is not to be stopped
+	if((cycleSinceStart > 1) && (cycleSinceStart <= (stopProduction + 1)))	//With an offset of -one, as long as a cup is poised AND production is not to be stopped
 	{
+		delay(100);
+		while(coffeeJobDone != true)
+		{
+			delay(300); //Wait untill coffee is done using the air
+		}
+
 		while(requestedCream > 0) //If there is creamer left to request
 		{
 			SensorValue(creamerOut)=true;	//Set the creamer to deploy
