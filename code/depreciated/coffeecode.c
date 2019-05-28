@@ -7,15 +7,15 @@ task main()
 {
 	while(true)
 	{
-		sensorvalue(coffeeOut)=true;
+		SensorValue(coffeeOut)=true;
 		delay(1000);
-		sensorvalue(creamerOut)=false;
-		sensorvalue(LED)=true;
+		SensorValue(creamerOut)=false;
+		SensorValue(LED)=true;
 		delay(400);
-		sensorvalue(coffeeOut)=false;
+		SensorValue(coffeeOut)=false;
 		delay(120);
-		sensorvalue(creamerOut)=true;
-		sensorvalue(LED)=false;
+		SensorValue(creamerOut)=true;
+		SensorValue(LED)=false;
 		delay(1000);
 	}
 }

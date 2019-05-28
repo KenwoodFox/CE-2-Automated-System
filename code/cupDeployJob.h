@@ -8,9 +8,15 @@
 task cupDeployJob()
 {
 	cupJobDone = false;	//Set the status of the job to false, the job is not done yet
+
 	if(cycleSinceStart < stopProduction)	//As long as this is not a cycle that takes place after production stops
 	{
-		delay(700);	//This delay to simulate the job being done
+		while(SensorValue[sonicCupSensor] > 5) //if a sensor reports that a cup is present
+		{
+			motor(cupMotor) = -50;
+			delay(25);
+		}
+		motor(cupMotor) = 0;
 	}
 	delay(1000); //Give an extra second
 	cupJobDone = true;	//Set the flag to true, the job is done
