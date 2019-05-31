@@ -17,7 +17,7 @@
 //Consts
 int requestedSugar; 			//the number of sugar tumbles to add
 int requestedCream; 			//the units of creamer to add
-int creamerConst = 4000; 	//the number of time units to deploy cream for
+int creamerConst = 2500;  //number of time units to deploy cream for
 int sugarTurnConst = 975; //The time in ms for the sugar motor to run
 int coffeeConst = 14000;		//The time in ms for the coffee to be deployed safely
 int cycleSinceStart; 			//Counts the current cycle since start
