@@ -1,0 +1,8 @@
+Final Documentation 
+
+In the final days we had most of the systems working. The pneumatics were working and firing consistently and we had no more power supply issues. We also got the 
+sugar drum sanded down enough so it would rotate smoothly everytime. We did haves some issues at the end however. For one class everytime we powered on the system
+coffee would squirt out of the tube. That went away by itself. The on persistent problem we had was the cup dispencer. Sometimes it would drop like five cups, sometimes 
+the would be off target and other times they would just not drop. We to fix this we altered we motor speed and added another bar to keep the cups in a straighter line. 
+While making these changes we noticed there was a screw that the cups were getting stuck on. We moved in out of the way. Overall the end of this project was a lot smoother 
+than the rest of the project. Our collabartion was getting better as well. We were getting use to how eachother worked and learning what we were best at. 
